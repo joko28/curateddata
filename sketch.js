@@ -1,35 +1,35 @@
 //Wolves & Arhchitecture
 
-let wolvesImg = [];
-let img = 0;
+//let wolvesImg = [];
+//let img = 0;
 //This function preloads all my images into an array
 //Preload runs before setup
 
-//let names = ["wolf", "zoe", "luna", "dakota", "star", "crystal"];
-//let randomIndex;
+let wolves = ["wolf", "zoe", "luna", "dakota", "star", "crystal"];
+let randomIndex;
 
-function preload() {
-  for (i = 0; i <= 20; i++) {
-    wolvesImg[i] = loadImage('wolves/'+[i]+'.jpg');
-  }
-}
+//function preload() {
+  //for (i = 0; i <= 20; i++) {
+  //  wolvesImg[i] = loadImage('wolves/'+[i]+'.jpg');
+  //}
+//}
 function setup() {
-  let canvas = createCanvas(1000, 1000);
-  canvas.parent('myCanvas');
-  frameRate(30);
-  imageMode(CENTER);
+  creatCanvas(1000, 1000);
+  //let canvas = createCanvas(1000, 1000);
+  //canvas.parent('myCanvas');
+  //frameRate(30);
+  //imageMode(CENTER);
 
-  //textSize(32);
-
+  textSize(32);
   //console.log(wolves[2]);
 }
 
 function draw() {
   background('pink');
-  if (frameCount % 150 == 0) {
-    img = int(random(wolvesImg.length));
-  }
-  image(wolvesImg[img], width/2, height/2.5, 400, 711);
+  //if (frameCount % 150 == 0) {
+  //  img = int(random(wolvesImg.length));
+  //}
+  //image(wolvesImg[img], width/2, height/2.5, 400, 711);
   //drawCloud();
 }
 
