@@ -5,7 +5,26 @@
 //This function preloads all my images into an array
 //Preload runs before setup
 
-let wolves = ["wolf", "zoe", "luna", "dakota", "star", "crystal"];
+let wolves = [{
+  name: "wolf",
+  color: "pink"
+}, {
+  name: "zoe",
+  color: "purple"
+}, {
+  name: "dakota",
+  color: "brown"
+}, {
+  name: "star",
+  color: "yellow"
+}, {
+  name: "crystal",
+  color: "gray"
+}, {
+  name: "luna",
+  color: "gray"
+}];
+
 let randomIndex;
 
 //function preload() {
