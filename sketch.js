@@ -1,7 +1,7 @@
 let wolvesImg = [];
 let frame;
 let phase = 'cover';
-let myFont;
+//let myFont;
 let coverSize;
 let studySize;
 let listSize;
@@ -15,18 +15,17 @@ let wrds2 = '';
 let wrds3 = '';
 let example;
 
-let emotions = ['Sad', 'Happy', 'Angry', 'Nervous', 'Calm', 'Anxious', 'Excited', 'Shame', 'Guilt'];
+let emotions = ['Sad', 'Happy', 'Angry', 'Nervous', 'Calm', 'Anxious', 'Excited', 'Shame', 'Guilt']
 
-let ranks = ['Alpha', 'Beta', 'Gamma', 'Omega', 'Delta'];
+let ranks = ['Alpha', 'Beta', 'Gamma', 'Omega', 'Delta']
 
-let characters = ['Optimistic', 'Curious', 'Courageous', 'Loyal', 'Compassionate','Respectful', 'Brave', 'Honest', 'Unselfish', 'Friendly', 'Clean', 'Trustworthy', 'Patient', 'Dependable', 'Open-minded', 'Evil', 'Selfish', 'Mean', 'Dishonest', 'Rude', 'Greedy', 'Impatient', 'Dirty', 'Disrespectful', 'Jealous', 'Lazy', 'Grumpy', 'Mysterious', 'Obnoxious', 'Annoying', 'Compulsive'];
-
+let characters = ['Optimistic', 'Curious', 'Courageous', 'Loyal', 'Compassionate','Respectful', 'Brave', 'Honest', 'Unselfish', 'Friendly', 'Clean', 'Trustworthy', 'Patient', 'Dependable', 'Open-minded', 'Evil', 'Selfish', 'Mean', 'Dishonest', 'Rude', 'Greedy', 'Impatient', 'Dirty', 'Disrespectful', 'Jealous', 'Lazy', 'Grumpy', 'Mysterious', 'Obnoxious', 'Annoying', 'Compulsive']
 
 //This function preloads all my images into an array.
 //Preload runs before setup.
 function preload() {
   for (i = 0; i <= 20; i++) {
-    wolvesImg[i] = loadImage('wolves/' + [i] + '.jpg');
+    wolvesImg[i] = loadImage('wolves/0.jpg' + [i] + '.jpg');
   }
 }
 
@@ -37,6 +36,12 @@ function setup() {
   let button = createButton('click me');
   button.parent('button-holder');
   button.mousePressed(bt);
+  frameRate(30);
+  imageMode(CENTER);
+  textAlign(CENTER);
+  textSize(20);
+  textResize();
+  coverDisplay();
 }
 
 function draw() {}
@@ -46,7 +51,7 @@ function bt() {
   img = int(random(wolvesImg.length));
   em = int(random(emotions.length));
   ra = int(random(ranks.length));
-  ch = int(random(character.length));
+  ch = int(random(characters.length));
   wrds1 = 'You are a emotionally' + emotions[em];
   wrds2 = 'A/an ' + ranks[ra];
   wrds3 = 'That is ' + characters[ch];
@@ -66,7 +71,7 @@ function coverDisplay() {
 
 function wolImage() {
   //image(frame, width*0.5, height*0.5, width, height);
-  image(wolvesImg[img], width * 0.5, height * 0.4, width*0.2812, width*0.5);
+  image(wolvesImg[img], width * 0.5, height * 0.5, width*0.5, width*0.5);
 }
 
 function divText() {
