@@ -1,7 +1,6 @@
 let wolvesImg = [];
 let frame;
 let phase = 'cover';
-//let myFont;
 let coverSize;
 let studySize;
 let listSize;
@@ -25,13 +24,13 @@ let characters = ['Optimistic', 'Curious', 'Courageous', 'Loyal', 'Compassionate
 //Preload runs before setup.
 function preload() {
   for (i = 0; i <= 20; i++) {
-    wolvesImg[i] = loadImage('wolves/0.jpg' + [i] + '.jpg');
+    wolvesImg[i] = loadImage('wolves/' + [i] + '.jpg');
   }
 }
 
 function setup() {
   //createCanvas(400, 400);
-  let canvas = createCanvas(windowWidth*0.5, (windowWidth*0.5)*1.25);
+  let canvas = createCanvas(windowWidth*0.8, (windowWidth*0.8)*1.25);
   canvas.parent('myCanvas');
   let button = createButton('click me');
   button.parent('button-holder');
@@ -39,7 +38,8 @@ function setup() {
   frameRate(30);
   imageMode(CENTER);
   textAlign(CENTER);
-  textSize(20);
+  textSize(50);
+  fill(0, 51, 102);
   textResize();
   coverDisplay();
 }
@@ -63,15 +63,13 @@ function bt() {
 }
 
 function coverDisplay() {
-  //image(frame, width*0.5,height*0.5, width, height);
   textSize(coverSize);
-  text('Press the button below', width * 0.5, height * 0.4);
+  text('Press the button below', width * 0.5, height * 0.5);
   text('to begin your reading.', width * 0.5, height * 0.5);
 }
 
 function wolImage() {
-  //image(frame, width*0.5, height*0.5, width, height);
-  image(wolvesImg[img], width * 0.5, height * 0.5, width*0.5, width*0.5);
+  image(wolvesImg[img], width * 0.5, height * 0.5, width, height);
 }
 
 function divText() {
