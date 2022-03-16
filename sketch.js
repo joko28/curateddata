@@ -1,27 +1,3 @@
-//let wolvesImg = [];
-//let frame;
-//let names = [{
-  //name: "WOLF",
-  //color: "pink"
-//}, {
-  //name: "ZOE",
-  //color: "purple"
-//}, {
-  //name: "DAKOTA",
-  //color: "brown"
-//}, {
-  //name: "STAR",
-  //color: "yellow"
-//}, {
-  //name: "CRYSTAL",
-  //color: "gray"
-//}, {
-  //name: "LUNA",
-  //color: "gray"
-//}];
-
-//let randomIndex;
-
 let wolvesImg = [];
 let frame;
 let phase = 'cover';
@@ -31,75 +7,65 @@ let studySize;
 let listSize;
 let retrySize;
 let img = 0;
-let e = 0;
-let r = 0;
-let c = 0;
+let em = 0;
+let ra = 0;
+let ch = 0;
 let wrds1 = '';
 let wrds2 = '';
 let wrds3 = '';
 let example;
 
-let emotions = ['Sad', 'Happy', 'Angry', 'Nervous', 'Calm', 'Anxious', 'Excited', 'Shame', 'Guilt']
+let emotions = ['Sad', 'Happy', 'Angry', 'Nervous', 'Calm', 'Anxious', 'Excited', 'Shame', 'Guilt'];
 
-let ranks = ['Alpha', 'Beta', 'Gamma', 'Omega', 'Delta']
+let ranks = ['Alpha', 'Beta', 'Gamma', 'Omega', 'Delta'];
 
-let character = ['Optimistic', 'Curious', 'Courageous', 'Loyal', 'Compassionate','Respectful', 'Brave', 'Honest', 'Unselfish', 'Friendly', 'Clean', 'Trustworthy', 'Patient', 'Dependable', 'Open-minded', 'Evil', 'Selfish', 'Mean', 'Dishonest', 'Rude', 'Greedy', 'Impatient', 'Dirty', 'Disrespectful', 'Jealous', 'Lazy', 'Grumpy', 'Mysterious', 'Obnoxious', 'Annoying', 'Compulsive']
+let character = ['Optimistic', 'Curious', 'Courageous', 'Loyal', 'Compassionate','Respectful', 'Brave', 'Honest', 'Unselfish', 'Friendly', 'Clean', 'Trustworthy', 'Patient', 'Dependable', 'Open-minded', 'Evil', 'Selfish', 'Mean', 'Dishonest', 'Rude', 'Greedy', 'Impatient', 'Dirty', 'Disrespectful', 'Jealous', 'Lazy', 'Grumpy', 'Mysterious', 'Obnoxious', 'Annoying', 'Compulsive'];
 
 
 //This function preloads all my images into an array.
 //Preload runs before setup.
 function preload() {
   for (i = 0; i <= 20; i++) {
-    plantImg[i] = loadImage('assets/' + [i] + '.jpg');
+    wolvesImg[i] = loadImage('wolves/' + [i] + '.jpg');
   }
-  frame = loadImage('assets/frame2.png');
-  myFont = loadFont('assets/fonts/DancingScript-Regular.ttf');
 }
 
 function setup() {
+  //createCanvas(400, 400);
   let canvas = createCanvas(windowWidth*0.5, (windowWidth*0.5)*1.25);
   canvas.parent('myCanvas');
-  let button = createButton('Click here to see your fate.');
+  let button = createButton('click me');
   button.parent('button-holder');
-  button.mousePressed(divination);
-  frameRate(30);
-  imageMode(CENTER);
-  textAlign(CENTER);
-  textFont(myFont);
-  textSize(20);
-  textResize();
-  coverDisplay();
+  button.mousePressed(bt);
 }
 
 function draw() {}
 
-function divination() {
+function bt() {
   phase = 'playing';
-  img = int(random(plantImg.length));
-  e = int(random(emotions.length));
-  r = int(random(ranks.length));
-  c = int(random(character.length));
-  wrds1 = 'You are a emotionally' + rootStem[rS] + ' ' + fortunes[fort];
-  wrds2 = 'A/an ' + leaves[leaf] + ' ' + fortunes2[fort2];
-  wrds3 = 'That is ' + flowers[flow] + ' ' + fortunes3[fort3];
+  img = int(random(wolvesImg.length));
+  em = int(random(emotions.length));
+  ra = int(random(ranks.length));
+  ch = int(random(character.length));
+  wrds1 = 'You are a emotionally' + emotions[em];
+  wrds2 = 'A/an ' + ranks[ra];
+  wrds3 = 'That is ' + characters[ch];
   console.log(wrds1);
   console.log(wrds2);
   console.log(wrds3);
-  wolvesImage();
+  wolImage();
   divText();
 }
 
 function coverDisplay() {
-  //background(220);
-  image(frame, width*0.5,height*0.5, width, height);
+  //image(frame, width*0.5,height*0.5, width, height);
   textSize(coverSize);
   text('Press the button below', width * 0.5, height * 0.4);
   text('to begin your reading.', width * 0.5, height * 0.5);
 }
 
-function wolvesImage() {
-  //background(255);
-  image(frame, width*0.5, height*0.5, width, height);
+function wolImage() {
+  //image(frame, width*0.5, height*0.5, width, height);
   image(wolvesImg[img], width * 0.5, height * 0.4, width*0.2812, width*0.5);
 }
 
@@ -143,21 +109,8 @@ function windowResized() {
   if (phase == 'cover') {
     coverDisplay();
   } else if (phase == 'playing') {
-    divImage();
+    wolImage();
     divText();
   }
   textResize();
 }
-
-//function mousePressed(){
-  //if (wolves[0]){
-    //this displays random name & splices it out of array
-    //background(random(200, 255));
-    //randomIndex = int(random(wolves.length));
-    //text(wolves[randomIndex].name, 500, 500);
-    //wolves.splice(randomIndex, 1);
-  //} else {
-    //background(random(200, 255));
-    //text("WOLVES!", 500, 500);
-  //}
-//}
