@@ -2,10 +2,6 @@ let wolvesImg = [];
 let frame;
 let phase = 'cover';
 let myFont;
-let coverSize;
-let studySize;
-let listSize;
-let retrySize;
 let img = 0;
 let em = 0;
 let ra = 0;
@@ -33,7 +29,7 @@ function preload() {
 
 function setup() {
   //createCanvas(400, 400);
-  let canvas = createCanvas(windowWidth*0.8, (windowWidth*0.8)*1.25);
+  let canvas = createCanvas(displayWidth, displayHeight);
   canvas.parent('myCanvas');
   let button = createButton('click me');
   button.parent('button-holder');
@@ -68,9 +64,9 @@ function bt() {
 }
 
 function coverDisplay() {
-  textSize(coverSize);
-  text('Press the button below', width * 0.5, height * 0.1);
-  text('to begin your reading.', width * 0.5, height * 0.15);
+  textSize(60);
+  text('Ready to begin', width * 0.5, height * 0.1);
+  text('your wolf search?', width * 0.5, height * 0.15);
 }
 
 function wolImage() {
@@ -78,38 +74,14 @@ function wolImage() {
 }
 
 function divText() {
-  textSize(studySize);
+  textSize(40);
   text('Is this you:', width / 2, height * 0.05);
-  textSize(listSize);
+  textSize(30);
   text(wrds1, width / 2, height * 0.85);
   text(wrds2, width / 2, height * 0.875);
   text(wrds3, width / 2, height * 0.9);
-  textSize(retrySize);
+  textSize(30);
   text('If it is not you, try again.', width / 2, height * 0.975);
-}
-
-function textResize() {
-  if (windowWidth > 1500) {
-    coverSize = 40;
-    studySize = 30;
-    listSize = 18;
-    retrySize = 16;
-  } else if (windowWidth > 1200) {
-    coverSize = 34;
-    studySize = 26;
-    listSize = 14;
-    retrySize = 12;
-  } else if (windowWidth > 900) {
-    coverSize = 30;
-    studySize = 20;
-    listSize = 12;
-    retrySize = 10;
-  } else if (windowWidth > 600) {
-    coverSize = 24;
-    studySize = 18;
-    listSize = 10;
-    retrySize = 9;
-  }
 }
 
 function windowResized() {
