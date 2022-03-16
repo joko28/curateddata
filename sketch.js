@@ -1,6 +1,7 @@
 let wolvesImg = [];
 let frame;
 let phase = 'cover';
+let myFont;
 let coverSize;
 let studySize;
 let listSize;
@@ -14,11 +15,11 @@ let wrds2 = '';
 let wrds3 = '';
 let example;
 
-let emotions = ['Sad', 'Happy', 'Angry', 'Nervous', 'Calm', 'Anxious', 'Excited', 'Shame', 'Guilt']
+let emotions = ['sad', 'happy', 'angry', 'nervous', 'calm', 'anxious', 'excited', 'shame', 'guilt']
 
 let ranks = ['Alpha', 'Beta', 'Gamma', 'Omega', 'Delta']
 
-let characters = ['Optimistic', 'Curious', 'Courageous', 'Loyal', 'Compassionate','Respectful', 'Brave', 'Honest', 'Unselfish', 'Friendly', 'Clean', 'Trustworthy', 'Patient', 'Dependable', 'Open-minded', 'Evil', 'Selfish', 'Mean', 'Dishonest', 'Rude', 'Greedy', 'Impatient', 'Dirty', 'Disrespectful', 'Jealous', 'Lazy', 'Grumpy', 'Mysterious', 'Obnoxious', 'Annoying', 'Compulsive']
+let characters = ['optimistic', 'curious', 'courageous', 'loyal', 'compassionate','respectful', 'brave', 'honest', 'unselfish', 'friendly', 'clean', 'trustworthy', 'patient', 'dependable', 'open-minded', 'evil', 'selfish', 'mean', 'dishonest', 'rude', 'greedy', 'impatient', 'dirty', 'disrespectful', 'jealous', 'lazy', 'grumpy', 'mysterious', 'obnoxious', 'annoying', 'compulsive']
 
 //This function preloads all my images into an array.
 //Preload runs before setup.
@@ -26,6 +27,8 @@ function preload() {
   for (i = 0; i <= 20; i++) {
     wolvesImg[i] = loadImage('wolves/' + [i] + '.jpg');
   }
+  myFont = loadFont('assets/fonts/DMSerifDisplay-Regular.ttf');
+
 }
 
 function setup() {
@@ -38,7 +41,9 @@ function setup() {
   frameRate(30);
   imageMode(CENTER);
   textAlign(CENTER);
+  textFont(myFont);
   textSize(50);
+  textStyle(BOLD);
   fill(0, 51, 102);
   textResize();
   coverDisplay();
@@ -52,7 +57,7 @@ function bt() {
   em = int(random(emotions.length));
   ra = int(random(ranks.length));
   ch = int(random(characters.length));
-  wrds1 = 'You are a emotionally' + emotions[em];
+  wrds1 = 'You are a emotionally ' + emotions[em];
   wrds2 = 'A/an ' + ranks[ra];
   wrds3 = 'That is ' + characters[ch];
   console.log(wrds1);
@@ -64,8 +69,8 @@ function bt() {
 
 function coverDisplay() {
   textSize(coverSize);
-  text('Press the button below', width * 0.5, height * 0.5);
-  text('to begin your reading.', width * 0.5, height * 0.5);
+  text('Press the button below', width * 0.5, height * 0.1);
+  text('to begin your reading.', width * 0.5, height * 0.15);
 }
 
 function wolImage() {
@@ -74,13 +79,13 @@ function wolImage() {
 
 function divText() {
   textSize(studySize);
-  text('Is this you:', width / 2, height * 0.625);
+  text('Is this you:', width / 2, height * 0.05);
   textSize(listSize);
-  text(wrds1, width / 2, height * 0.675);
-  text(wrds2, width / 2, height * 0.7);
-  text(wrds3, width / 2, height * 0.725);
+  text(wrds1, width / 2, height * 0.85);
+  text(wrds2, width / 2, height * 0.875);
+  text(wrds3, width / 2, height * 0.9);
   textSize(retrySize);
-  text('If it is not you, try again.', width / 2, height * 0.8);
+  text('If it is not you, try again.', width / 2, height * 0.975);
 }
 
 function textResize() {
