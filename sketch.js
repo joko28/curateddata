@@ -53,6 +53,7 @@ function draw() {}
 function coverDisplay() {
   textSize(coverSize);
   textAlign(CENTER);
+  //fill(0. 205, 255);
   text('Ready to begin', width * 0.5, height * 0.1);
   text('your wolf search?', width * 0.5, height * 0.15);
 }
