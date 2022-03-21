@@ -97,9 +97,9 @@ function textResize() {
     retrySize = 30;
   } else if (windowWidth > 400)
     coverSize = 30;
-    studySize = 25;
-    listSize = 25;
-    retrySize = 15;
+    studySize = 20;
+    listSize = 20;
+    retrySize = 10;
 }
 
 function windowResized() {
