@@ -24,7 +24,7 @@ let characters = ['optimistic', 'curious', 'courageous', 'loyal', 'compassionate
 //This function preloads all my images into an array.
 //Preload runs before setup.
 function preload() {
-  for (i = 0; i <= 20; i++) {
+  for (i = 1; i <= 20; i++) {
     assetsImg[i] = loadImage('assets/' + [i] + '.jpg');
   }
   myFont = loadFont('assets/fonts/DMSerifDisplay-Regular.ttf');
@@ -89,18 +89,18 @@ function divText() {
   text('If it is not you, try again.', width / 2, height * 0.975);
 }
 
- function textResize() {
-   if (windowWidth > 1500) {
-     coverSize = 40;
-     studySize = 30;
-     listSize = 20;
-     retrySize = 20;
-   } else if (windowWidth > 600)
-    coverSize = 30;
-    studySize = 20;
-    listSize = 10;
-    retrySize = 10;
-  }
+function textResize() {
+  if (windowWidth > 1500) {
+    coverSize = 50;
+    studySize = 40;
+    listSize = 40;
+    retrySize = 30;
+  } else if (windowWidth > 600)
+    coverSize = 40;
+    studySize = 30;
+    listSize = 30;
+    retrySize = 20;
+}
 
 function windowResized() {
   resizeCanvas(windowWidth * 0.5, (windowWidth * 0.5) * 1.25);
