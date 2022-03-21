@@ -15,7 +15,7 @@ let wrds2 = '';
 let wrds3 = '';
 let example;
 
-let emotions = ['sad', 'happy', 'angry', 'nervous', 'calm', 'anxious', 'excited', 'shame', 'guilt']
+let emotions = ['sad', 'happy', 'angry', 'nervous', 'calm', 'anxious', 'excited', 'shameful', 'guilty']
 
 let ranks = ['Alpha', 'Beta', 'Gamma', 'Omega', 'Delta']
 
@@ -24,18 +24,18 @@ let characters = ['optimistic', 'curious', 'courageous', 'loyal', 'compassionate
 //This function preloads all my images into an array.
 //Preload runs before setup.
 function preload() {
-  for (i = 1; i <= 20; i++) {
+  for (i = 1; i <= 14; i++) {
     assetsImg[i] = loadImage('assets/' + [i] + '.jpg');
   }
   myFont = loadFont('assets/fonts/DMSerifDisplay-Regular.ttf');
 }
 
 function setup() {
-  let canvas = createCanvas(windowWidth, windowWidth);
+  let canvas = createCanvas(windowWidth*0.8, (windowWidth*0.5)*1.25);
   canvas.parent('myCanvas');
   let button = createButton('click here to start');
   button.parent('button-holder');
-  button.mousePressed(bt);
+  button.mousePressed(buttonPress);
   frameRate(30);
   imageMode(CENTER);
   textAlign(CENTER);
@@ -45,20 +45,20 @@ function setup() {
   stroke(0);
   fill(255);
   textResize();
-  coverDisplay();
+  textDisplay();
 }
 
 function draw() {}
 
-function coverDisplay() {
+function textDisplay() {
   textSize(coverSize);
   textAlign(CENTER);
   //fill(0. 205, 255);
-  text('Ready to begin', width * 0.5, height * 0.1);
-  text('your wolf search?', width * 0.5, height * 0.15);
+  text('Ready to begin', width * 0.5, height * 0.4);
+  text('your wolf search?', width * 0.5, height * 0.45);
 }
 
-function bt() {
+function buttonPress() {
   phase = 'playing';
   img = int(random(assetsImg.length));
   em = int(random(emotions.length));
@@ -80,13 +80,13 @@ function wolImage() {
 
 function divText() {
   textSize(studySize);
-  text('Is this you:', width / 2, height * 0.05);
+  text('Is this you?', width / 2, height * 0.05);
   textSize(listSize);
   text(wrds1, width / 2, height * 0.85);
   text(wrds2, width / 2, height * 0.875);
   text(wrds3, width / 2, height * 0.9);
   textSize(retrySize);
-  text('If it is not you, try again.', width / 2, height * 0.975);
+  text('Try again if you do not accept.', width / 2, height * 0.975);
 }
 
 function textResize() {
@@ -95,15 +95,15 @@ function textResize() {
     studySize = 40;
     listSize = 40;
     retrySize = 30;
-  } else if (windowWidth > 600)
-    coverSize = 40;
-    studySize = 30;
-    listSize = 30;
-    retrySize = 20;
+  } else if (windowWidth > 400)
+    coverSize = 30;
+    studySize = 25;
+    listSize = 25;
+    retrySize = 15;
 }
 
 function windowResized() {
-  resizeCanvas(windowWidth * 0.5, (windowWidth * 0.5) * 1.25);
+  resizeCanvas(windowWidth * 0.8, (windowWidth * 0.5) * 1.25);
   if (phase == 'cover') {
     coverDisplay();
   } else if (phase == 'playing') {

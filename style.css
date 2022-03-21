@@ -10,8 +10,8 @@ html, body {
 #myCanvas canvas {
   display: block;
   margin: auto;
-  border-radius: 50px;
-  padding: 20px;
+  border-radius: 1100px;
+  padding: 10px;
 }
 
 button {
@@ -19,17 +19,17 @@ button {
 
 cursive;
   font-weight: bold;
-  font-size: large;
+  font-size: medium;
   margin: auto;
   display: block;
   padding: 10px;
   color: black;
   background-color: #CCFFFF;
-  border-radius: 50%;
+  border-radius: 30%;
   border-style: solid;
-  width: 100px;
-  height: 90px;
-  outline: none;
+  width: 95px;
+  height: 65px;
+  outline: solid;
 }
 
 h1 {
@@ -46,6 +46,6 @@ p.fn {
 }
 
 div.info_box {
-  padding-left: 33%;
-  padding-right: 33%;
+  padding-left: 30%;
+  padding-right: 30%;
 }
