@@ -1,0 +1,7 @@
+Text Datasets
+
+Emotional Traits = ['sad', 'happy', 'angry', 'nervous', 'calm', 'anxious', 'excited', 'shameful', 'guilty']
+
+Wolf Pack Ranks = ['Alpha', 'Beta', 'Gamma', 'Omega', 'Delta']
+
+Characteristic Traits = ['optimistic', 'curious', 'courageous', 'loyal', 'compassionate', 'respectful', 'brave', 'honest', 'unselfish', 'friendly', 'clean', 'trustworthy', 'patient', 'dependable', 'open-minded', 'evil', 'selfish', 'mean', 'dishonest', 'rude', 'greedy', 'impatient', 'dirty', 'disrespectful', 'jealous', 'lazy', 'grumpy', 'mysterious', 'obnoxious', 'annoying', 'compulsive']
