@@ -4,9 +4,27 @@ html, body {
   margin: 0;
   padding: 0;
   font-family: 'DM Serif Display', serif;
-  background: #ADE2C8;
+  //background: #ADE2C8;
 }
 
+* {
+  margin: 0;
+  padding: 0;
+  max-width: 100%;
+}
+
+.container {
+  width: 85vw;
+  height: auto;
+  margin: 0 auto;
+}
+
+#your-element-selector {
+  width: 100vw;
+  height:100vh;
+  position: fixed;
+  z-index: -999; /*order send to back*/
+}
 #myCanvas canvas {
   display: block;
   margin: auto;
